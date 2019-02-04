@@ -1,4 +1,3 @@
-
 function disableButton(listener,btn){
 	var isvalide = true;
 	var elements = document.getElementsByClassName(listener);
@@ -8,9 +7,6 @@ function disableButton(listener,btn){
 		}
 	}
 	document.getElementById(btn).disabled= !isvalide;
-}
-function maxLimit(event, content,length){
-	return content>=length;
 }
 
 Date.prototype.yyyymmdd = function() {
@@ -69,3 +65,14 @@ $('.letterMoral').on('input propertychange', function() {
 		$(this).val($(this).val().substring(0, $(this).val().length - 1));
 	}
 });
+
+
+function limitar(e, contenido){
+	var limit = e.target.getAttribute("limit");
+	var unicode=e.keyCode? e.keyCode : e.charCode;
+	if(unicode==8 || unicode==46 || unicode==13 || unicode==9 || unicode==37 || unicode==39 || unicode==38 || unicode==40)
+        return true;
+   if(contenido.length>=limit)
+        return false;
+	return true;
+}

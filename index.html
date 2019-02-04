@@ -7,6 +7,12 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<script src="https://damianrincon.github.io/js/validatos.js"></script>
+	<input type="text" name="a" value="" class="letters" placeholder="Solo Letras"><br><br>
+	<input type="text" name="b" value="" class="numbers" placeholder="Solo Numeros"><br><br>
+	<input type="text" name="c" value="" class="lettersAndNumbers" placeholder="Solo letras y numeros"><br><br>
+	<input type="text" name="d" onKeyDown="return limitar(event,this.value)" limit="10" placeholder="Max 10 numeros"><br><br>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="validatos.js"></script>
 </body>
 </html>
