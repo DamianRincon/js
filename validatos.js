@@ -1,7 +1,8 @@
-function disableButton(class,btn){
+
+function disableButton(listener,btn){
 	var isvalide = true;
-	elements = document.getElementsByClassName(class);
-	for (i=0;i<elementos.length;i++) {
+	var elements = document.getElementsByClassName(listener);
+	for (i=0;i<elements.length;i++) {
 		if (elements[i].value=="" || elements[i].value==null) {
 			isvalide = false;
 		}
