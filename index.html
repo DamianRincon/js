@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -7,12 +7,105 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<input type="text" name="a" value="" class="letters" placeholder="Solo Letras"><br><br>
-	<input type="text" name="b" value="" class="numbers" placeholder="Solo Numeros"><br><br>
-	<input type="text" name="c" value="" class="lettersAndNumbers" placeholder="Solo letras y numeros"><br><br>
-	<input type="text" name="d" onKeyDown="return limitar(event,this.value)" limit="10" placeholder="Max 10 numeros"><br><br>
+	<input type="text" class="numbers format_number" placeholder="Formato de pesos"><br><br>
+	<input type="text" class="numbers" placeholder="Solo numeros"><br><br>
+	<input type="text" class="letters_numbers" placeholder="letras y numeros"><br><br>
+	<input type="phone" class="numbers" onKeyDown="return limit(event,this.value)" limit="10" placeholder="Telefono"><br><br>
+	<input type="text" class="letters" placeholder="Solo letras"><br><br>
+	<input type="text" onKeyDown="return limit(event,this.value)" limit="10" placeholder="Maximo 10 caracteres"><br><br>
 	
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="validatos.js"></script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Validatos</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+	<style type="text/css" media="screen">
+		.black{ color: #000 !important }
+	</style>
+</head>
+<body>
+	<!-- off-canvas -->
+    <div id="my-id" uk-offcanvas="mode: push; overlay: true; flip: true">
+        <div class="uk-offcanvas-bar uk-background-default">
+            <button class="uk-offcanvas-close black" type="button" uk-close></button>
+        </div>
+    </div>
+    <!-- Header -->
+	<header id="header">
+		<nav class="uk-navbar-container" uk-navbar>
+			<div class="uk-navbar-left">
+				<a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#my-id" uk-toggle></a>
+				<a class="uk-navbar-item uk-logo" >Validatos</a>
+    		</div>
+		</nav>
+	</header><!-- /header -->
+	<main>
+		<div class="uk-container uk-margin-medium-top">
+			<div>
+				<p class="uk-text-lead">Son pequeñas funciones JavaScript para realizar validaciones de entrada de datos en inputs HTML, tan solo con agregar unas clases a cada input.</p>	
+			</div>
+			<div class="uk-margin-medium-top uk-section">
+				<h1 class="uk-heading-bullet">Sólo números</h1>
+				<ul uk-tab data-uk-tab="{connect:'#my-tab'}">
+					<li class="uk-active"><a href="#tab1">Demostración</a></li>
+    				<li><a href="tab2">Código</a></li>
+				</ul>
+				<ul id="my-tab" class="uk-switcher uk-margin">
+    				<li><div class="uk-container">
+    					<p>Validación que el input sólo acepte números</p>
+    					<input type="text" class="uk-input uk-form-width-medium numbers" placeholder="Sólo núumeros">
+    				</div></li>
+    				<li><div class="uk-container">
+    					
+    				</div></li>
+  				</ul>
+			</div>
+
+			<div class="uk-margin-medium-top uk-section">
+				<h1 class="uk-heading-bullet">Sólo letras</h1>
+				<ul uk-tab data-uk-tab="{connect:'#my-tab2'}">
+					<li class="uk-active"><a href="#">Demostración</a></li>
+    				<li><a href="#">Código</a></li>
+				</ul>
+				<ul id="my-tab2" class="uk-switcher uk-margin">
+    				<li><div class="uk-container">
+    					<p>Validación que el input sólo acepte letras, sin caracteres especiales</p>
+    					<input type="text" class="uk-input uk-form-width-medium letters" placeholder="Sólo letras"><br><br>
+    				</div></li>
+    				<li><div class="uk-container">
+    					
+    				</div></li>
+  				</ul>
+			</div>
+
+			<div class="uk-margin-medium-top uk-section">
+				<h1 class="uk-heading-bullet">Formato de pesos</h1>
+				<ul uk-tab data-uk-tab="{connect:'#my-tab3'}">
+					<li class="uk-active"><a href="#">Demostración</a></li>
+    				<li><a href="#">Código</a></li>
+				</ul>
+				<ul id="my-tab3" class="uk-switcher uk-margin">
+    				<li><div class="uk-container">
+    					<p>Validación que el input convierta los números ingresados a formato de pesos</p>
+    					<input type="text" class="uk-input uk-form-width-medium numbers format_number" placeholder="Formato 000,000.00">
+    				</div></li>
+    				<li><div class="uk-container">
+    					
+    				</div></li>
+  				</ul>
+			</div>
+		</div>
+	</main><!-- /header -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
 	<script src="validatos.js"></script>
 </body>
 </html>
