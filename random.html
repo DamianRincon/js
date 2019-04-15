@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+	<header id="header">
+		<nav class="black">
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo">Random</a>
+    		</div>
+  		</nav>
+	</header><!-- /header -->
+	<main>
+		<div class="container">
+			<h4>Personas en el Random</h4>
+			<div class="chips chips-initial"></div>
+		</div>
+		<div class="container">
+			<div class="fixed-action-btn">
+				<a class="btn-floating btn-large red">
+					<i class="large material-icons">mode_edit</i>
+  				</a>  
+			</div>
+		</div>
+	</main>
+	<footer>
+		
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var data = [
+				{tag: "Damián"},
+				{tag: "Jose Luis"},
+				{tag: "Emilio"},
+				{tag: "Charli"},
+				{tag: "Gerardo"},
+				{tag: "Luis Eduardo"},
+				{tag: "Cristian"},
+				{tag: "Lizbeth"},
+				{tag: "Juan Carlos"},
+				{tag: "Alejandro"},
+			];
+			$('.fixed-action-btn').floatingActionButton();
+			$('.tap-target').tapTarget();
+			$('.chips').chips();
+			$('.chips-initial').chips({ data: data});
+			$(".fixed-action-btn").click(function(){
+				var data = M.Chips.getInstance($('.chips')).chipsData;
+				alert(data[Math.floor(Math.random() * data.length)]["tag"]);
+
+			});
+			//alert(JSON.stringify(M.Chips.getInstance($('.chips')).chipsData));
+		});
+	</script>
+</body>
+</html>
